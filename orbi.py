@@ -8,11 +8,12 @@ class Orbi():
         self.mail = input("ingrese su correo: ")
         self.password = input(("ingrese su password: "))
         self.link = input(("link del formulario: "))
+        self.edge = input("Ingresa la ruta del driver de tu navegador, separada por doble barra. Ejemplo: C:\\Users\\Admin\\Downloads\\edgedriver_win64\\msedgedriver ")
     
     def filler(self):
         try:
             #acceso a Orbi
-            driver = webdriver.Edge(executable_path="C:\\Users\\Admin\\Downloads\\edgedriver_win64\\msedgedriver")
+            driver = webdriver.Edge(executable_path=self.edge)
             driver.maximize_window()
             driver.get('https://orbi.edu.do/orbi/evaluacion/recolecciond/registrar/177-0')
             time.sleep(5)
